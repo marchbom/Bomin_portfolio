@@ -10,12 +10,12 @@ export default function Header() {
   return (
     <>
       <header className="w-full flex absolute justify-between">
-        <div
+        <button
           onClick={toTopHandler}
           className="font-mono sm:text-[30px] text-[color:var(--gray-900)] dark:text-[var(--gray-300)] hover:text-[var(--gray-500)] dark:hover:text-[color:var(--gray-100)] cursor-pointer ml-20 mt-5 dark:text-3xl"
         >
           PORTFOLIO
-        </div>
+        </button>
         <div className="flex gap-4 mt-5">
           <div
             onClick={toggle}

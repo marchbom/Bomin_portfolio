@@ -26,9 +26,9 @@ export default function Main() {
           <span className="absolute flex flex-col sm:text-2xl mt-5 font-mono text-[var(--gray-600)] dark:opacity-80">
             &lt;FRONT-END DEVELOPER /&gt;
           </span>
-          <p className="sm:text-[220px] text-[var(--gray-900)] dark:text-[var(--gray-300)] mt-2 bottom-0 font-[var(--fw-title)] font-mono ">
+          <h1 className="sm:text-[220px] text-[var(--gray-900)] dark:text-[var(--gray-300)] mt-2 bottom-0 font-[var(--fw-title)] font-mono ">
             KIM BOMIN
-          </p>
+          </h1>
         </div>
       </div>
     </>
