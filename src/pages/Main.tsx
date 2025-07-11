@@ -1,6 +1,6 @@
 import bgNoise from "../assets/bg-img/noise2.png";
-import Header from "./Header";
-import Introduce from "./Introduce";
+import Header from "../components/Header";
+import Introduce from "../components/Introduce";
 import { useDarkMode } from "usehooks-ts";
 
 export default function Main() {

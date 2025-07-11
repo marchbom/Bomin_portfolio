@@ -1,52 +1,81 @@
 :root {
-  --black: #000;
-  --white: #fff;
-
+  @layer base {
+    body {
+      font-family: "CodeSaver", sans-serif;
+    }
+  }
   /* Gray palette */
-  --gray-100: #f6f6f6;
-  --gray-200: #f2f2f2;
-  --gray-300: #d7d7d7;
-  --gray-400: #b0b0b0;
-  --gray-500: #a1a1a1;
-  --gray-600: #8f8f8f;
-  --gray-700: #595959;
-  --gray-800: #404040;
-  --gray-900: #313131;
-  --gray-1000: #1c1c1c;
+  @theme {
+    --black: #000;
+    --white: #fff;
+    --gray-100: #f6f6f6;
+    --gray-200: #f2f2f2;
+    --gray-300: #d7d7d7;
+    --gray-400: #b0b0b0;
+    --gray-500: #a1a1a1;
+    --gray-600: #8f8f8f;
+    --gray-700: #595959;
+    --gray-800: #404040;
+    --gray-900: #313131;
+    --gray-1000: #1c1c1c;
+  }
 
   /* Typography */
   /* font-size */
-  --font-title: 100px;
-  --fw-title: bold;
-  --lh-title: 140%;
-  --ls-title: -3px;
+  @layer components {
+    .title {
+      font-size: 100px;
+      font-weight: bold;
+      line-height: 140%;
+      letter-spacing: -3px;
+    }
 
-  --font-h2: 50px;
-  --fw-h2: bold;
-  --lh-h2: 140%;
-  --ls-h2: 0%;
+    .h2 {
+      font-size: 50px;
+      font-weight: bold;
+      line-height: 140%;
+      letter-spacing: 0%;
+    }
 
-  --font-h34: 32px;
-  --fw-h3: bold;
-  --lh-h3: 120%;
-  --ls-h3: 0%;
+    .h3 {
+      font-size: 32px;
+      font-weight: bold;
+      line-height: 120%;
+      letter-spacing: 0%;
+    }
 
-  --fw-h4: medium;
-  --lh-h4: 140%;
-  --ls-h4: 0%;
+    .h4 {
+      font-size: 32px;
+      font-weight: medium;
+      line-height: 140%;
+      letter-spacing: 0%;
+    }
 
-  --font-h5: 24px;
-  --fw-h5: bold;
-  --lh-h5: 140%;
-  --ls-h5: 0%;
+    .h5 {
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 140%;
+      letter-spacing: 0%;
+    }
 
-  --font-h6: 16px;
-  --fw-h6: medium;
-  --lh-h6: 140%;
-  --ls-h6: -0.3%;
+    .h6 {
+      font-size: 16px;
+      font-weight: medium;
+      line-height: 140%;
+      letter-spacing: -0.3%;
+    }
 
-  --body-fs: 14px;
-  --body-fw: medium;
-  --body-lh: 150%;
-  --body-ls: -0.3px;
+    .b-e {
+      font-size: 14px;
+      font-weight: medium;
+      line-height: 140%;
+      letter-spacing: -0.3px;
+    }
+    .b-k {
+      font-size: 14px;
+      font-weight: medium;
+      line-height: 150%;
+      letter-spacing: -0.3%;
+    }
+  }
 }

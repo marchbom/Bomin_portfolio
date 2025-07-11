@@ -1,6 +1,7 @@
 import { useDarkMode } from "usehooks-ts";
-import Main from "./components/Main";
+import Main from "./pages/Main";
 import { useEffect } from "react";
+import Loading from "./pages/Loading";
 
 function App() {
   const { isDarkMode } = useDarkMode();
@@ -14,9 +15,12 @@ function App() {
     }
   }, [isDarkMode]);
   return (
-    <div className="min-h-screen">
-      <Main />
-    </div>
+    <>
+      <div className="min-h-screen">
+        <Loading />
+        <Main />
+      </div>
+    </>
   );
 }
 

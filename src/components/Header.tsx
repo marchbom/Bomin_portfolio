@@ -19,15 +19,15 @@ export default function Header() {
         <div className="flex gap-4 mt-5">
           <div
             onClick={toggle}
-            className="dark:bg-[#404040] dark:hover:bg-[var(--gray-900)] bg-[var(--gray-200)] hover:bg-[var(--gray-300)] sm:w-10 sm:h-10 rounded-full flex items-center justify-center cursor-pointer"
+            className="dark:bg-[var(--gray-800)] dark:hover:bg-[var(--gray-900)] bg-[var(--gray-200)] hover:bg-[var(--gray-300)] sm:w-10 sm:h-10 rounded-full flex items-center justify-center cursor-pointer"
           >
             {isDarkMode ? (
-              <IoSunnyOutline className="absolute w-5 h-5 dark:text-white text-[color:var(--black)]" />
+              <IoSunnyOutline className="absolute w-5 h-5 dark:text-white text-[var(--black)]" />
             ) : (
-              <IoMoon className="absolute w-5 h-5 dark:text-white text-[color:var(--black)]" />
+              <IoMoon className="absolute w-5 h-5 dark:text-white text-[var(--black)]" />
             )}
           </div>
-          <div className="dark:bg-[#404040] bg-[var(--gray-200)] hover:bg-[var(--gray-300)] dark:hover:bg-[var(--gray-900)] sm:w-10 sm:h-10 rounded-full flex items-center justify-center sm:mr-10 cursor-pointer">
+          <div className="dark:bg-[var(--gray-800)] bg-[var(--gray-200)] hover:bg-[var(--gray-300)] dark:hover:bg-[var(--gray-900)] sm:w-10 sm:h-10 rounded-full flex items-center justify-center sm:mr-10 cursor-pointer">
             <IoShareSocialOutline className="absolute w-5 h-5 dark:text-[var(--white)] text-[color:var(--black)]" />
           </div>
         </div>
