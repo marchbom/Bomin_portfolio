@@ -10,7 +10,7 @@ export default function Loading() {
         <ReactTyped
           strings={[" npm run dev"]}
           typeSpeed={110}
-          backSpeed={70}
+          backSpeed={100}
           backDelay={2000}
           showCursor={true}
           style={{ color: "white", letterSpacing: "100%", fontSize: "14px" }}
