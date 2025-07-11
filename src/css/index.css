@@ -25,7 +25,3 @@
   src: url("/src/font/code-saver-bold.otf") format("opentype");
   font-weight: 700;
 }
-
-.typed-cursor {
-  animation: blink 5s;
-}
