@@ -1,9 +1,13 @@
 import { useDarkMode } from "usehooks-ts";
-import Main from "./components/Main";
-import { useEffect } from "react";
-
+import Main from "./pages/Main";
+import { useEffect, useState } from "react";
+import Loading from "./pages/Loading";
+import SkillInfo from "./pages/SkillInfo";
+import Project from "./pages/Project";
 function App() {
   const { isDarkMode } = useDarkMode();
+  const [isLoading, setIsLoading] = useState(true);
+  const [fadeIn, setFadeIn] = useState(false);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -13,10 +17,36 @@ function App() {
       root.classList.remove("dark");
     }
   }, [isDarkMode]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 4500);
+    const insertMain = setTimeout(() => setFadeIn(true), 4000);
+
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(insertMain);
+    };
+  }, []);
+
+  if (isLoading) return <Loading />;
   return (
-    <div className="min-h-screen">
-      <Main />
-    </div>
+    <>
+      <div
+        className={`min-h-screen transition-opacity duration-2000 ease-in-out bg-[#191919] ${
+          fadeIn ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <section className="h-screen">
+          <Main />
+        </section>
+        <section>
+          <SkillInfo />
+        </section>
+        <section>
+          <Project />
+        </section>
+      </div>
+    </>
   );
 }
 
