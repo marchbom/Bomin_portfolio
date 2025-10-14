@@ -5,14 +5,14 @@ export default function Loading() {
   const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setFadeOut(true), 3000);
+    const timer = setTimeout(() => setFadeOut(true), 4000);
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <div className="w-screen h-screen flex bg-[#191919] items-center justify-center">
       <div
-        className={`flex transition-opacity duration-500 ${
+        className={`flex transition-opacity duration-300 ${
           fadeOut ? "opacity-0" : "opacity-100"
         }`}
       >

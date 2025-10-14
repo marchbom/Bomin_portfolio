@@ -45,12 +45,25 @@ export default function SkillInfo() {
     <div ref={containerRef} className="relative w-full h-full">
       <div className="fixed top-0 left-0 w-full h-screen bg-[#191919] -z-10" />
       <div className="sticky top-0 h-screen pointer-events-none">
-        <h2 className="absolute top-[350px] left-1/2 transform -translate-x-1/2 text-4xl md:text-6xl font-bold text-gray-300/80 z-10">
-          Skills & Tools
+        <h2
+          className="absolute text-centertransform title text-[var(--gray-400)]/90 z-10"
+          style={{
+            top:
+              scrollProgress > 0.65
+                ? `${350 - (scrollProgress - 0.65) * 1500}px`
+                : "350px",
+
+            left: "50%",
+            transform: "translateX(-80%)",
+            opacity: scrollProgress > 0.8 ? 0 : scrollProgress > 0.1 ? 1 : 0,
+            transition: "top 0.4s ease-out, opacity 0.4s ease-out",
+          }}
+        >
+          SKILLS & TOOLS
         </h2>
       </div>
 
-      <div className="relative w-full h-[400vh]">
+      <section className="relative w-full h-[400vh]">
         {/* HTML - 느린 속도 */}
         <div
           ref={(el) => {
@@ -117,8 +130,8 @@ export default function SkillInfo() {
           }}
           className="absolute"
           style={{
-            top: `${65 + (1 - scrollProgress) * 100}%`,
-            left: "53%",
+            top: `${65 + (1 - scrollProgress) * 20}%`,
+            left: "50%",
             opacity: visibleCards.has(3) ? 1 : 0,
             transform: visibleCards.has(3)
               ? "none"
@@ -195,7 +208,7 @@ export default function SkillInfo() {
           }}
           className="absolute"
           style={{
-            top: `${15 + (1 - scrollProgress) * 100}%`,
+            top: `${15 + (1 - scrollProgress) * 120}%`,
             left: "61%",
             opacity: visibleCards.has(7) ? 1 : 0,
             transform: visibleCards.has(7)
@@ -263,6 +276,27 @@ export default function SkillInfo() {
         >
           <SkillCard skill={skillData[10]} />
         </div>
+      </section>
+      <div className="sticky top-0 h-screen pointer-events-none">
+        <h2
+          className="absolute left-3/4 title text-[var(--gray-400)]/90 z-20"
+          style={{
+            top:
+              scrollProgress > 0.85
+                ? `${400 - (scrollProgress - 0.85) * 3000}px`
+                : "50%",
+            transform: "translate(-50%, -50%)",
+            opacity:
+              scrollProgress < 0.75
+                ? 0
+                : scrollProgress < 0.95
+                ? (scrollProgress - 0.8) / 0.1
+                : 1,
+            transition: "top 0.6s ease-out, opacity 0.1s linear",
+          }}
+        >
+          PROJECTS
+        </h2>
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import Main from "./pages/Main";
 import { useEffect, useState } from "react";
 import Loading from "./pages/Loading";
 import SkillInfo from "./pages/SkillInfo";
+import Project from "./pages/Project";
 function App() {
   const { isDarkMode } = useDarkMode();
   const [isLoading, setIsLoading] = useState(true);
@@ -19,7 +20,7 @@ function App() {
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 4500);
-    const insertMain = setTimeout(() => setFadeIn(true), 4200);
+    const insertMain = setTimeout(() => setFadeIn(true), 4000);
 
     return () => {
       clearTimeout(timer);
@@ -31,7 +32,7 @@ function App() {
   return (
     <>
       <div
-        className={`min-h-screen transition-opacity duration-3000 ease-in-out bg-[#191919] ${
+        className={`min-h-screen transition-opacity duration-2000 ease-in-out bg-[#191919] ${
           fadeIn ? "opacity-100" : "opacity-0"
         }`}
       >
@@ -40,6 +41,9 @@ function App() {
         </section>
         <section>
           <SkillInfo />
+        </section>
+        <section>
+          <Project />
         </section>
       </div>
     </>
