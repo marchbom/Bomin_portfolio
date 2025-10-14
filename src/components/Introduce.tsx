@@ -1,52 +1,35 @@
 import { useState } from "react";
-//@ts-expect-error
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-//@ts-expect-error
-import { vscDarkPlus, prism } from "react-syntax-highlighter/dist/esm/styles/prism";
+import {
+  vscDarkPlus,
+  prism,
+} from "react-syntax-highlighter/dist/esm/styles/prism";
 import { useDarkMode } from "usehooks-ts";
+import { codeMap } from "../constants/codeMap";
 
 export default function Introduce() {
   const { isDarkMode } = useDarkMode();
-  const tabs = ["profile-overview.html", "skills.html", "contact.ts"];
-
+  const tabs = ["profile-overview.html", "skills.tsx", "contact.ts"];
   const [activeTab, setActiveTab] = useState<string>(tabs[0]);
 
-  const codeMap: Record<string, string> = {
-    "profile-overview.html": `<!-- start .scope-profile -->
-<section class="scope-profile">
-  <h3>프로필</h3>
-  <p>
-    안녕하세요. 프론트엔드 개발자 김보민입니다. 
-    사용자 중심 UI/UX를 구현하는 데 집중합니다.
-    협업과 커뮤니케이션을 중시하며,
-    효율충입니다.
-    
-  </p>
-  <p>추가적인 소개를 작성합니다.</p>
-</section>`,
+  const handleCodeClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const target = e.target as HTMLElement;
+    const text = target.textContent || "";
 
-    "skills.html": `<section class="skills">
-  <h3>보유 기술</h3>
-  <ul>
-    <li>HTML, CSS, JavaScript</li>
-    <li>React, TypeScript, Vue</li>
-    <li>Tailwind CSS</li>
-    <li>Git, Figma, Slack, Notion</li>
-  </ul>
-</section>`,
+    // GitHub
+    if (
+      text.includes("github.com/marchbom") &&
+      !text.includes("Bomin_portfolio")
+    ) {
+      window.open("https://github.com/marchbom", "_blank");
+      return;
+    }
 
-    "contact.ts": `const contact = {
-  email
-  "sirubom1203@gmail.com",
-  github
-  "https://github.com/marchbom",
-  portfolio
-  "https://github.com/Porc-FE/Bomin"
-}
-
-
-
-export default contact;`,
+    // 포트폴리오
+    if (text.includes("Bomin_portfolio")) {
+      window.open("https://github.com/marchbom/Bomin_portfolio", "_blank");
+      return;
+    }
   };
 
   return (
@@ -59,8 +42,10 @@ export default contact;`,
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`px-1.5 pb-1 ${
-                    activeTab === tab ? "border-b-2 border-[#AEC6F6] text-[#AEC6F6] pt-0.5" : ""
+                  className={`px-1.5 pb-1 cursor-pointer ${
+                    activeTab === tab
+                      ? "border-b-2 border-[#AEC6F6] text-[#AEC6F6] pt-0.5"
+                      : ""
                   }`}
                 >
                   {tab}
@@ -70,7 +55,10 @@ export default contact;`,
           </div>
         </div>
         {isDarkMode ? (
-          <div className="break-words text-[11px] h-full overflow-x-hidden">
+          <div
+            className="break-words text-[11px] h-full overflow-x-hidden"
+            onClick={handleCodeClick}
+          >
             <SyntaxHighlighter
               language="tsx"
               style={vscDarkPlus}
@@ -81,7 +69,10 @@ export default contact;`,
             </SyntaxHighlighter>
           </div>
         ) : (
-          <div className="break-words text-[11px] h-full overflow-x-hidden">
+          <div
+            className="break-words text-[11px] h-full overflow-x-hidden"
+            onClick={handleCodeClick}
+          >
             <SyntaxHighlighter
               language="tsx"
               style={prism}

@@ -32,7 +32,7 @@ function App() {
   return (
     <>
       <div
-        className={`min-h-screen transition-opacity duration-2000 ease-in-out bg-[#191919] ${
+        className={`min-h-screen transition-opacity duration-200 ease-in bg-[#191919] ${
           fadeIn ? "opacity-100" : "opacity-0"
         }`}
       >
