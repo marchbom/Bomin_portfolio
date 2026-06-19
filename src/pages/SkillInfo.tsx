@@ -46,7 +46,7 @@ export default function SkillInfo() {
       <div className="fixed top-0 left-0 w-full h-screen bg-[#191919] -z-10" />
       <div className="sticky top-0 h-screen pointer-events-none">
         <h2
-          className="absolute text-centertransform title text-[var(--gray-400)]/90 z-10"
+          className="absolute text-center title text-[var(--gray-400)]/90 z-10"
           style={{
             top:
               scrollProgress > 0.65
