@@ -43,7 +43,6 @@ export default function SkillInfo() {
 
   return (
     <div ref={containerRef} className="relative w-full h-full">
-      <div className="fixed top-0 left-0 w-full h-screen bg-[#191919] -z-10" />
       <div className="sticky top-0 h-screen pointer-events-none">
         <h2
           className="absolute text-center title text-[var(--gray-400)]/90 z-10"
@@ -56,7 +55,7 @@ export default function SkillInfo() {
             left: "50%",
             transform: "translateX(-80%)",
             opacity: scrollProgress > 0.8 ? 0 : scrollProgress > 0.1 ? 1 : 0,
-            transition: "top 0.4s ease-out, opacity 0.4s ease-out",
+            transition: "opacity 0.4s ease-out",
           }}
         >
           SKILLS & TOOLS
@@ -77,8 +76,7 @@ export default function SkillInfo() {
             transform: visibleCards.has(0)
               ? "none"
               : "translateY(20px) scale(0.9)",
-            transition:
-              "top 0.9s ease-out, opacity 0.8s ease-out, transform 0.8s ease-out",
+            transition: "opacity 0.8s ease-out, transform 0.8s ease-out",
           }}
         >
           <SkillCard skill={skillData[0]} />
@@ -116,8 +114,7 @@ export default function SkillInfo() {
             transform: visibleCards.has(2)
               ? "none"
               : "translateY(50px) scale(0.9)",
-            transition:
-              "top 1.2s ease-out, opacity 0.8s ease-out, transform 0.8s ease-out",
+            transition: "opacity 0.8s ease-out, transform 0.8s ease-out",
           }}
         >
           <SkillCard skill={skillData[2]} />
@@ -155,8 +152,7 @@ export default function SkillInfo() {
             transform: visibleCards.has(4)
               ? "none"
               : "translateY(50px) scale(0.9)",
-            transition:
-              "top 1.0s ease-out, opacity 0.6s ease-out, transform 0.6s ease-in",
+            transition: "opacity 0.6s ease-out, transform 0.6s ease-in",
           }}
         >
           <SkillCard skill={skillData[4]} />
@@ -175,8 +171,7 @@ export default function SkillInfo() {
             transform: visibleCards.has(5)
               ? "none"
               : "translateY(50px) scale(0.9)",
-            transition:
-              "top 0.2s ease-out, opacity 0.8s ease-out, transform 0.8s ease-out",
+            transition: "opacity 0.8s ease-out, transform 0.8s ease-out",
           }}
         >
           <SkillCard skill={skillData[5]} />
@@ -292,7 +287,7 @@ export default function SkillInfo() {
                 : scrollProgress < 0.95
                 ? (scrollProgress - 0.8) / 0.1
                 : 1,
-            transition: "top 0.6s ease-out, opacity 0.1s linear",
+            transition: "opacity 0.1s linear",
           }}
         >
           PROJECTS
