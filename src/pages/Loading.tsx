@@ -12,7 +12,7 @@ export default function Loading() {
   return (
     <div className="w-screen h-screen flex bg-[#191919] items-center justify-center">
       <div
-        className={`flex transition-opacity duration-300 ${
+        className={`flex transition-opacity duration-200 ${
           fadeOut ? "opacity-0" : "opacity-100"
         }`}
       >
