@@ -29,9 +29,5 @@ export const codeMap: Record<string, string> = {
   portfolio: "https://github.com/marchbom/Bomin_portfolio"
 }
 
-// 클릭해서 방문하세요!
-// GitHub: https://github.com/marchbom
-// Portfolio: https://github.com/marchbom/Bomin_portfolio
-
 export default contact;`,
 };

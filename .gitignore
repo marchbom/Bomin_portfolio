@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# AI 도구/하네스 설치물 (각자 설치, 레포에 포함하지 않음)
+.claude/
+.github/skills/
+.impeccable/
+CLAUDE.md
+PRODUCT.md

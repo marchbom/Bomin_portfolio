@@ -1,6 +1,6 @@
-import touchbase from "../assets/images/projects/touchbase.png";
-import nunew from "../assets/images/projects/nunew.png";
-import studium from "../assets/images/projects/studium.png";
+import touchbase from "../assets/project/touchbase.png";
+import nunew from "../assets/project/NUNEW.png";
+import studium from "../assets/project/studium.png";
 
 export const projects: Record<string, ProjectData> = {
   NUNEW: {

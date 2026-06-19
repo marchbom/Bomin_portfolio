@@ -2,24 +2,52 @@ interface SkillCardProps {
   skill: Skill;
 }
 
-export default function SkillCard({ skill }: SkillCardProps) {
-  return (
-    <div className="relative w-[282px] h-[364px] rounded-2xl overflow-hidden bg-white/10 border border-white/20 backdrop-blur-[20px] shadow-[0_8px_30px_rgba(0,0,0,0.1)] glass-inner">
-      <div
-        className="absolute w-[200%] h-[200%] -top-1/2 -left-1/2 animate-blob opacity-30 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(circle at 20% 20%, rgba(255,255,255,0.03), transparent 70%)",
-          filter: "url(#rgb-shift)",
-        }}
-      />
+const fileNames: Record<string, string> = {
+  html: "index.html",
+  css: "styles.css",
+  js: "script.js",
+  ts: "types.ts",
+  react: "App.tsx",
+  vue: "App.vue",
+  next: "page.tsx",
+  tailwind: "tailwind.config.ts",
+  tanstack: "query.ts",
+  zustand: "store.ts",
+  github: "README.md",
+};
 
-      <div className="p-6 flex h-full text-white flex-col justify-between relative z-10">
-        <div>
-          <img src={skill.icon} alt={skill.name} className="w-20 h-20 mb-2" />
-          <p className="text-xl font-semibold">{skill.name}</p>
-        </div>
-        <p className="text-sm opacity-90">{skill.description}</p>
+export default function SkillCard({ skill }: SkillCardProps) {
+  const fileName = fileNames[skill.id] ?? `${skill.id}.ts`;
+
+  return (
+    <div className="group w-[282px] h-[364px] rounded-xl overflow-hidden bg-[#1c1c1c] border border-[var(--gray-900)] transition-colors duration-300 hover:border-[var(--gray-700)]">
+      {/* 터미널 헤더 */}
+      <div className="flex items-center gap-2 px-4 h-9 border-b border-[var(--gray-900)] bg-[#222]">
+        <span className="w-3 h-3 rounded-full bg-[#ff5f56]" />
+        <span className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
+        <span className="w-3 h-3 rounded-full bg-[#27c93f]" />
+        <span className="ml-2 font-mono text-xs text-[var(--gray-600)]">
+          {fileName}
+        </span>
+      </div>
+
+      {/* 본문 */}
+      <div className="flex flex-col h-[calc(100%-2.25rem)] p-7">
+        <img
+          src={skill.icon}
+          alt={skill.name}
+          className="w-14 h-14 mb-8 transition-transform duration-300 group-hover:-translate-y-1"
+        />
+
+        <h3 className="font-mono text-2xl font-bold tracking-tight text-white">
+          {skill.name}
+        </h3>
+
+        <div className="w-8 h-px my-4 bg-[var(--gray-700)]" />
+
+        <p className="text-sm leading-relaxed text-[var(--gray-400)]">
+          {skill.description}
+        </p>
       </div>
     </div>
   );

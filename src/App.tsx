@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import Loading from "./pages/Loading";
 import SkillInfo from "./pages/SkillInfo";
 import Project from "./pages/Project";
+import Contact from "./components/Contact";
+import bgNoise from "./assets/bg-img/noise2.png";
 function App() {
   const { isDarkMode } = useDarkMode();
   const [isLoading, setIsLoading] = useState(true);
@@ -32,19 +34,43 @@ function App() {
   return (
     <>
       <div
-        className={`min-h-screen transition-opacity duration-200 ease-in bg-[#191919] ${
+        className={`relative min-h-screen transition-opacity duration-2000 ease-in-out bg-[#191919] ${
           fadeIn ? "opacity-100" : "opacity-0"
         }`}
       >
-        <section className="h-screen">
-          <Main />
-        </section>
-        <section>
-          <SkillInfo />
-        </section>
-        <section>
-          <Project />
-        </section>
+        {/* 전역 배경 질감 — 노이즈 + 옅은 글로우 */}
+        <div
+          className="fixed inset-0 z-0 pointer-events-none"
+          aria-hidden="true"
+        >
+          <div
+            className="absolute inset-0 bg-repeat opacity-[0.06]"
+            style={{ backgroundImage: `url(${bgNoise})` }}
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(circle at 50% 22%, rgba(255,255,255,0.05), transparent 55%)",
+            }}
+          />
+        </div>
+
+        {/* 콘텐츠 */}
+        <div className="relative z-10">
+          <section className="h-screen">
+            <Main />
+          </section>
+          <section>
+            <SkillInfo />
+          </section>
+          <section>
+            <Project />
+          </section>
+          <section>
+            <Contact />
+          </section>
+        </div>
       </div>
     </>
   );
