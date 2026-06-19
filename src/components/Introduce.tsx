@@ -1,7 +1,5 @@
 import { useState } from "react";
-//@ts-expect-error
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-//@ts-expect-error
 import { vscDarkPlus, prism } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { useDarkMode } from "usehooks-ts";
 
