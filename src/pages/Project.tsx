@@ -9,7 +9,7 @@ export default function Project() {
   const [selected, setSelected] = useState<string>("TOUCHBASE");
 
   return (
-    <div className="w-full h-screen bg-[#191919] flex flex-col overflow-hidden">
+    <div className="w-full h-screen flex flex-col overflow-hidden">
       <ProjectGnb
         projectOrder={projectOrder}
         selected={selected}
